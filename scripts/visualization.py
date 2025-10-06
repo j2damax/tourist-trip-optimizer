@@ -11,6 +11,29 @@ import numpy as np
 import pandas as pd
 
 
+def _get_score_column(data):
+    """
+    Get the appropriate score column name from the dataframe.
+    Supports both 'score' and 'interest_score' for backward compatibility.
+    
+    Parameters:
+    -----------
+    data : pd.DataFrame
+        DataFrame containing attraction data
+        
+    Returns:
+    --------
+    str
+        Name of the score column to use
+    """
+    if 'interest_score' in data.columns:
+        return 'interest_score'
+    elif 'score' in data.columns:
+        return 'score'
+    else:
+        raise ValueError("DataFrame must contain either 'interest_score' or 'score' column")
+
+
 def plot_fitness_evolution(fitness_history):
     """
     Plot the evolution of fitness over generations.
@@ -66,10 +89,11 @@ def plot_route_on_map(attractions_data, tour_indices, output_file='tour_map.html
     
     for idx, attraction_idx in enumerate(tour_indices):
         attraction = attractions_data.iloc[attraction_idx]
+        score_col = _get_score_column(attractions_data)
         
         folium.Marker(
             location=[attraction['latitude'], attraction['longitude']],
-            popup=f"{idx+1}. {attraction['name']}<br>Score: {attraction['score']}<br>Duration: {attraction['visit_duration']}h",
+            popup=f"{idx+1}. {attraction['name']}<br>Score: {attraction[score_col]}<br>Duration: {attraction['visit_duration']}h",
             tooltip=attraction['name'],
             icon=folium.Icon(color='red' if idx == 0 else 'blue' if idx == len(tour_indices)-1 else 'green',
                            icon='info-sign')
@@ -138,8 +162,9 @@ def plot_tour_statistics(attractions_data, tour_indices, distance_matrix):
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     
     tour_attractions = attractions_data.iloc[tour_indices]
+    score_col = _get_score_column(attractions_data)
     
-    axes[0, 0].bar(range(len(tour_indices)), tour_attractions['score'].values)
+    axes[0, 0].bar(range(len(tour_indices)), tour_attractions[score_col].values)
     axes[0, 0].set_xlabel('Stop Number')
     axes[0, 0].set_ylabel('Satisfaction Score')
     axes[0, 0].set_title('Satisfaction Score by Stop')
@@ -163,10 +188,10 @@ def plot_tour_statistics(attractions_data, tour_indices, distance_matrix):
         axes[1, 0].set_title('Distance Between Consecutive Stops')
         axes[1, 0].grid(True, alpha=0.3)
     
-    total_score = tour_attractions['score'].sum()
+    total_score = tour_attractions[score_col].sum()
     total_visit_time = tour_attractions['visit_duration'].sum()
     total_travel_dist = sum(distances) if distances else 0
-    total_travel_time = total_travel_dist / 50  # Assume 50 km/h
+    total_travel_time = total_travel_dist / 40  # Assume 40 km/h (as per requirements)
     
     stats_text = f"""
     Total Attractions: {len(tour_indices)}
@@ -240,8 +265,9 @@ def create_summary_report(attractions_data, tour_indices, distance_matrix, algor
         Formatted summary report
     """
     tour_attractions = attractions_data.iloc[tour_indices]
+    score_col = _get_score_column(attractions_data)
     
-    total_score = tour_attractions['score'].sum()
+    total_score = tour_attractions[score_col].sum()
     total_visit_time = tour_attractions['visit_duration'].sum()
     
     distances = []
@@ -250,7 +276,7 @@ def create_summary_report(attractions_data, tour_indices, distance_matrix, algor
         distances.append(dist)
     
     total_travel_dist = sum(distances) if distances else 0
-    total_travel_time = total_travel_dist / 50
+    total_travel_time = total_travel_dist / 40  # Use 40 km/h as per requirements
     total_time = total_visit_time + total_travel_time
     
     report = f"""
@@ -267,11 +293,11 @@ Tour Sequence:
     for idx, attraction_idx in enumerate(tour_indices):
         attraction = attractions_data.iloc[attraction_idx]
         report += f"{idx+1}. {attraction['name']}\n"
-        report += f"   Score: {attraction['score']:.2f} | Duration: {attraction['visit_duration']:.2f}h\n"
+        report += f"   Score: {attraction[score_col]:.2f} | Duration: {attraction['visit_duration']:.2f}h\n"
         
         if idx < len(tour_indices) - 1:
             dist = distances[idx]
-            travel_time = dist / 50
+            travel_time = dist / 40  # Use 40 km/h as per requirements
             report += f"   → Travel: {dist:.2f}km ({travel_time:.2f}h)\n"
         report += "\n"
     
