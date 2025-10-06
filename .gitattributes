@@ -1,1 +1,25 @@
-data/raw/*.csv filter=lfs diff=lfs merge=lfs -text
+# Git LFS configuration for data files
+# Track all CSV files in the data directory
+data/**/*.csv filter=lfs diff=lfs merge=lfs -text
+
+# Track NumPy array files
+data/**/*.npy filter=lfs diff=lfs merge=lfs -text
+
+# Track large HTML visualization files
+data/**/*.html filter=lfs diff=lfs merge=lfs -text
+
+# Track compressed data files
+data/**/*.zip filter=lfs diff=lfs merge=lfs -text
+data/**/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+data/**/*.gz filter=lfs diff=lfs merge=lfs -text
+
+# Track pickle files
+data/**/*.pkl filter=lfs diff=lfs merge=lfs -text
+data/**/*.pickle filter=lfs diff=lfs merge=lfs -text
+
+# Track Parquet files
+data/**/*.parquet filter=lfs diff=lfs merge=lfs -text
+
+# Track HDF5 files
+data/**/*.h5 filter=lfs diff=lfs merge=lfs -text
+data/**/*.hdf5 filter=lfs diff=lfs merge=lfs -text
