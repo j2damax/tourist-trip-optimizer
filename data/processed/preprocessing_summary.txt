@@ -1,0 +1,39 @@
+DATA PREPROCESSING SUMMARY
+================================================================================
+
+Input file: /home/runner/work/tourist-trip-optimizer/tourist-trip-optimizer/data/raw/locations.csv
+Output directory: /home/runner/work/tourist-trip-optimizer/tourist-trip-optimizer/data/processed
+Processing date: 2025-10-06 06:20:57.544672
+
+Final dataset:
+  - Number of attractions: 953
+  - Columns: poi_id, name, latitude, longitude, category, interest_score, visit_duration
+
+Category distribution:
+  - Religious Site: 291
+  - General: 245
+  - Waterfall: 230
+  - Cultural: 79
+  - Nature: 53
+  - Beach: 47
+  - Hiking: 8
+
+Interest scores:
+  - Range: [45.0, 95.0]
+  - Mean: 71.4
+  - Std: 14.0
+
+Visit durations (hours):
+  - Range: [1.0, 3.0]
+  - Mean: 1.5
+  - Total: 1461.5
+
+Distance matrix:
+  - Shape: (953, 953)
+  - Range: [0.00, 437.65] km
+  - Mean: 126.49 km
+
+Travel time matrix (avg speed: 40 km/h):
+  - Shape: (953, 953)
+  - Range: [0.00, 10.94] hours
+  - Mean: 3.16 hours

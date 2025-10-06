@@ -59,7 +59,7 @@ def calculate_distance_matrix(attractions):
     return distance_matrix
 
 
-def calculate_travel_time(distance, avg_speed=50):
+def calculate_travel_time(distance, avg_speed=40):
     """
     Calculate travel time based on distance and average speed.
     
@@ -68,7 +68,7 @@ def calculate_travel_time(distance, avg_speed=50):
     distance : float
         Distance in kilometers
     avg_speed : float
-        Average speed in km/h (default: 50)
+        Average speed in km/h (default: 40)
         
     Returns:
     --------
@@ -92,12 +92,19 @@ def validate_attraction_data(data):
     bool
         True if data is valid, False otherwise
     """
-    required_columns = ['name', 'latitude', 'longitude', 'visit_duration', 'score']
+    # Check for either 'score' or 'interest_score' column (for backward compatibility)
+    required_columns = ['name', 'latitude', 'longitude', 'visit_duration']
+    score_column_options = ['score', 'interest_score']
     
     for col in required_columns:
         if col not in data.columns:
             print(f"Error: Missing required column '{col}'")
             return False
+    
+    # Check if at least one score column exists
+    if not any(col in data.columns for col in score_column_options):
+        print(f"Error: Missing score column. Expected one of: {score_column_options}")
+        return False
     
     return True
 
@@ -121,11 +128,14 @@ def prepare_data_for_optimization(data):
     
     distance_matrix = calculate_distance_matrix(data)
     
+    # Use 'interest_score' if available, otherwise fall back to 'score'
+    score_column = 'interest_score' if 'interest_score' in data.columns else 'score'
+    
     prepared_data = {
         'attractions': data,
         'distance_matrix': distance_matrix,
         'n_attractions': len(data),
-        'scores': data['score'].values,
+        'scores': data[score_column].values,
         'visit_durations': data['visit_duration'].values
     }
     
