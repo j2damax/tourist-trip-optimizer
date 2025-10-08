@@ -2,15 +2,39 @@
 
 A Strategic Framework for Implementing the Tourist Trip Design Problem (TTDP) for Sri Lankan tourist attractions.
 
+## 📊 Comprehensive Optimization Report
+
+**📖 [Complete Optimization Report](OPTIMIZATION_REPORT.md)** - Full academic-style report with literature review, methodology, and analysis
+
+**📈 [Results Summary](RESULTS_SUMMARY.md)** - Quick overview of key findings and recommendations
+
+These reports provide comprehensive analysis of the Tourist Trip Design Problem, including:
+- Problem definition with mathematical formulation
+- Literature review of 6 related research studies  
+- Data exploration and preprocessing (953 Sri Lankan attractions)
+- Genetic Algorithm implementation and results (0.24s, score 555.00)
+- Mixed Integer Programming implementation (299.89s, score 558.00, optimal)
+- Detailed comparison and analysis (GA is 1,249× faster with 0.54% optimality gap)
+- Real-world applicability and business impact
+
 ## Overview
 
 This project implements optimization algorithms to solve the Tourist Trip Design Problem (TTDP), which aims to maximize tourist satisfaction by selecting and sequencing attractions within time constraints. The implementation includes both a Genetic Algorithm (GA) and a Mixed Integer Programming (MIP) approach for comparison.
+
+### Key Results
+
+- **Genetic Algorithm:** 0.24 seconds, score 555.00 (99.46% of optimal)
+- **MIP (Optimal):** 299.89 seconds, score 558.00 (100% optimal, proven)
+- **Performance:** GA is 1,249× faster with only 0.54% quality gap
+- **Recommendation:** Use GA for real-world applications (scalable, fast, near-optimal)
 
 ## Project Structure
 
 ```
 tourist-trip-optimizer/
 ├── data/                  # Data directory for datasets and results
+│   ├── processed/        # Processed data (attractions, distance matrices)
+│   └── results/          # Optimization results (GA, MIP outputs)
 ├── notebooks/            # Jupyter notebooks for analysis
 │   ├── 01_Data_Exploration_and_Preparation.ipynb
 │   ├── 02_Genetic_Algorithm_Implementation.ipynb
@@ -23,6 +47,8 @@ tourist-trip-optimizer/
 │   └── visualization.py  # Visualization functions
 ├── examples/            # Usage examples
 ├── requirements.txt      # Project dependencies
+├── OPTIMIZATION_REPORT.md  # 📊 Comprehensive analysis report (full academic report)
+├── RESULTS_SUMMARY.md     # 📈 Quick results overview and recommendations
 └── README.md            # This file
 ```
 
