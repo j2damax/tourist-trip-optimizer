@@ -4,6 +4,38 @@ This project includes comprehensive documentation to support development, mainte
 
 ## Documentation Files
 
+### 📚 [LEARNING_GUIDE.md](LEARNING_GUIDE.md) ⭐ NEW!
+**Purpose**: Comprehensive educational guide for learning optimization algorithms  
+**Audience**: Beginners with minimal optimization knowledge  
+**Contents**:
+- **1,840 lines**, **11 major sections**
+- Core concepts explained simply (Optimization, GA, MIP, Heuristics)
+- Educational resources (books, videos, courses, tutorials)
+- Detailed step-by-step walkthrough of this specific problem
+- Code examples from the project with line-by-line explanations
+- Hands-on exercises with solutions
+- Learning path and roadmap (3-week plan)
+- Common pitfalls and debugging tips
+- Parameter tuning guidelines
+- Further learning resources and next steps
+
+**Key Sections**:
+1. Introduction to Optimization - What it is and why we need it
+2. Core Concepts - GA, MIP, and heuristics explained
+3. Educational Resources - Books, videos, courses to study
+4. Understanding This Project - TTDP problem statement
+5. Step-by-Step: Genetic Algorithm - Complete GA walkthrough
+6. Step-by-Step: Mixed Integer Programming - Complete MIP walkthrough
+7. Comparing Approaches - When to use GA vs MIP
+8. Hands-On Exercises - 5 exercises with solutions
+9. Learning Path & Roadmap - 3-week structured plan
+10. Common Pitfalls & Tips - What to avoid
+11. Further Learning - Advanced topics and resources
+
+**Perfect for**: Someone who wants to master optimization from scratch!
+
+---
+
 ### 📊 [PROGRESS.md](PROGRESS.md)
 **Purpose**: Quick project status and completion tracking  
 **Audience**: Project managers, stakeholders, new contributors  
@@ -172,12 +204,13 @@ This project includes comprehensive documentation to support development, mainte
 
 | Document | Lines | Sections | Size | Purpose |
 |----------|-------|----------|------|---------|
+| **LEARNING_GUIDE.md** | **1,840** | **11** | **~62 KB** | **Educational guide** ⭐ NEW |
 | PROGRESS.md | 184 | ~20 | 5.5 KB | Status tracking |
-| README.md | 161 | ~15 | 5.1 KB | User guide |
+| README.md | 193 | ~17 | 6.2 KB | User guide |
 | TECHNICAL.md | 677 | 53 | 23 KB | Technical reference |
 | TASKS.md | 1,800+ | 58+ | 48 KB | Task breakdown |
 | instructions.md | 798 | 62 | 22 KB | Agent instructions |
-| **Total** | **3,620+** | **208+** | **103+ KB** | **Complete docs** |
+| **Total** | **5,492+** | **221+** | **167+ KB** | **Complete docs** |
 
 ---
 
