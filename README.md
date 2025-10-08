@@ -2,6 +2,8 @@
 
 A Strategic Framework for Implementing the Tourist Trip Design Problem (TTDP) for Sri Lankan tourist attractions.
 
+> **🎓 New to optimization algorithms?** Check out our [**Comprehensive Learning Guide**](LEARNING_GUIDE.md) - a beginner-friendly, 1800+ line guide that teaches you Genetic Algorithms, MIP, and optimization concepts from scratch!
+
 ## Overview
 
 This project implements optimization algorithms to solve the Tourist Trip Design Problem (TTDP), which aims to maximize tourist satisfaction by selecting and sequencing attractions within time constraints. The implementation includes both a Genetic Algorithm (GA) and a Mixed Integer Programming (MIP) approach for comparison.
@@ -12,22 +14,27 @@ This project implements optimization algorithms to solve the Tourist Trip Design
 tourist-trip-optimizer/
 ├── data/                  # Data directory for datasets and results
 ├── notebooks/            # Jupyter notebooks for analysis
+│   ├── 00_Data_Preprocessing_Demo.ipynb
 │   ├── 01_Data_Exploration_and_Preparation.ipynb
 │   ├── 02_Genetic_Algorithm_Implementation.ipynb
 │   ├── 03_MIP_Model_Benchmark.ipynb
-│   └── 04_Results_and_Visualization.ipynb
+│   ├── 04_Results_and_Visualization.ipynb
+│   └── 05_Interactive_Learning_Tutorial.ipynb  # 🎓 Start here if learning!
 ├── scripts/              # Python modules
 │   ├── data_utils.py     # Data loading and processing utilities
 │   ├── ga_core.py        # Genetic Algorithm implementation
 │   ├── mip_solver.py     # MIP solver implementation
 │   └── visualization.py  # Visualization functions
 ├── examples/            # Usage examples
+├── LEARNING_GUIDE.md     # 📚 Comprehensive learning guide (1800+ lines)
 ├── requirements.txt      # Project dependencies
 └── README.md            # This file
 ```
 
 ## Features
 
+- **📚 Comprehensive Learning Guide**: New! 1800+ line guide teaching optimization from scratch
+- **🎓 Interactive Tutorial**: Step-by-step Jupyter notebook for hands-on learning
 - **Data Exploration**: Load and analyze Sri Lankan tourist attraction data
 - **Genetic Algorithm**: Metaheuristic approach for finding high-quality solutions quickly
 - **MIP Model**: Exact optimization using Mixed Integer Programming
@@ -57,6 +64,22 @@ pip install -r requirements.txt
 - folium: Interactive map generation
 
 ## Usage
+
+### 🎓 For Learners: Start Here!
+
+If you're new to optimization algorithms, we recommend:
+
+1. **Read the [Learning Guide](LEARNING_GUIDE.md)** (sections 1-4 for basics)
+2. **Run the [Interactive Tutorial](notebooks/05_Interactive_Learning_Tutorial.ipynb)** (hands-on with simple examples)
+3. **Explore the full notebooks** in sequence (01 → 02 → 03 → 04)
+
+The Learning Guide includes:
+- Core concepts explained simply (no PhD required!)
+- Educational resources (books, videos, courses)
+- Step-by-step walkthroughs with code examples
+- Hands-on exercises with solutions
+- Parameter tuning tips
+- Common pitfalls and how to avoid them
 
 ### Running the Notebooks
 
