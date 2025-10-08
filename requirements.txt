@@ -4,3 +4,5 @@ pulp
 haversine
 matplotlib
 folium
+pytest
+pytest-cov
