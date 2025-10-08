@@ -1,0 +1,23 @@
+{
+  "algorithm": "Mixed Integer Programming",
+  "computation_time": 299.89026618003845,
+  "status": "Optimal",
+  "objective_value": 558.0,
+  "tour_length": 6,
+  "tour_sequence": [
+    0,
+    1,
+    10,
+    29,
+    14,
+    19
+  ],
+  "visited_attractions": [
+    0,
+    1,
+    10,
+    14,
+    19,
+    29
+  ]
+}
