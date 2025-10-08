@@ -3,6 +3,8 @@
 A Strategic Framework for Implementing the Tourist Trip Design Problem (TTDP) for Sri Lankan tourist attractions.
 
 > **🎓 New to optimization algorithms?** Check out our [**Comprehensive Learning Guide**](LEARNING_GUIDE.md) - a beginner-friendly, 1800+ line guide that teaches you Genetic Algorithms, MIP, and optimization concepts from scratch!
+> 
+> **⚡ Quick Start**: [`QUICK_START.md`](QUICK_START.md) - Get started in 15 minutes!
 
 ## Overview
 
