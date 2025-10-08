@@ -19,7 +19,9 @@ tourist-trip-optimizer/
 ├── scripts/              # Python modules
 │   ├── data_utils.py     # Data loading and processing utilities
 │   ├── ga_core.py        # Genetic Algorithm implementation
+│   ├── mip_solver.py     # MIP solver implementation
 │   └── visualization.py  # Visualization functions
+├── examples/            # Usage examples
 ├── requirements.txt      # Project dependencies
 └── README.md            # This file
 ```
@@ -86,6 +88,8 @@ Execute the notebooks in sequence:
 
 ### Using the Python Modules
 
+#### Genetic Algorithm
+
 ```python
 from scripts.data_utils import load_attractions_data, calculate_distance_matrix
 from scripts.ga_core import GeneticAlgorithm
@@ -111,6 +115,34 @@ tour = ga.get_valid_tour(solution)
 # Visualize results
 plot_route_on_map(attractions, tour, 'tour_map.html')
 ```
+
+#### MIP Solver
+
+```python
+from scripts.data_utils import load_attractions_data
+from scripts.mip_solver import MIPSolver
+import numpy as np
+
+# Load data
+attractions = load_attractions_data('data/processed/attractions.csv')
+distance_matrix = np.load('data/processed/distance_matrix.npy')
+
+# Create and solve MIP model
+solver = MIPSolver(
+    distance_matrix=distance_matrix,
+    scores=attractions['interest_score'].values,
+    visit_durations=attractions['visit_duration'].values,
+    max_time=24.0,
+    avg_speed=50.0
+)
+
+solver.build_model()
+solution = solver.solve(time_limit=300)  # 5 minute limit
+solver.print_solution(attractions)
+```
+
+For more examples, see the `examples/` directory.
+
 
 ## Problem Formulation
 
