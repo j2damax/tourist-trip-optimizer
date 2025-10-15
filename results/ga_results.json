@@ -1,0 +1,31 @@
+{
+  "method": "Genetic Algorithm",
+  "total_score": 913.0,
+  "num_days": 3,
+  "total_pois": 9,
+  "computation_time": 802.686331987381,
+  "itinerary": [
+    [
+      576,
+      741,
+      833
+    ],
+    [
+      817,
+      613,
+      318
+    ],
+    [
+      437,
+      901,
+      290
+    ]
+  ],
+  "parameters": {
+    "population_size": 200,
+    "generations": 500,
+    "crossover_rate": 0.85,
+    "mutation_rate": 0.03,
+    "tournament_size": 3
+  }
+}

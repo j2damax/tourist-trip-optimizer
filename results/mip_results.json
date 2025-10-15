@@ -1,0 +1,21 @@
+{
+  "method": "Mixed-Integer Programming",
+  "total_score": 400.0,
+  "num_days": 3,
+  "total_pois": 4,
+  "computation_time": 11.632119178771973,
+  "status": "Optimal",
+  "itinerary": [
+    [
+      7
+    ],
+    [
+      12
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "num_pois_in_problem": 20
+}

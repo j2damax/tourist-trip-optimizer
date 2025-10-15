@@ -1,0 +1,29 @@
+{
+  "project": "Tourist Trip Design Problem (TTDP) - Sri Lanka",
+  "comparison": {
+    "genetic_algorithm": {
+      "problem_size": "~1200 POIs",
+      "score": 913.0,
+      "pois_visited": 9,
+      "time_seconds": 802.686331987381,
+      "optimality": "Near-optimal (no guarantee)",
+      "scalability": "Excellent"
+    },
+    "mip_solver": {
+      "problem_size": "20 POIs",
+      "score": 400.0,
+      "pois_visited": 4,
+      "time_seconds": 11.632119178771973,
+      "optimality": "Proven optimal",
+      "scalability": "Poor"
+    }
+  },
+  "recommendation": "Use Genetic Algorithm for production applications with large datasets. Use MIP for small-scale problems requiring proven optimality.",
+  "future_work": [
+    "Integrate real-time traffic data for dynamic travel times",
+    "Add POI opening hours as time window constraints",
+    "Implement personalization based on user preferences",
+    "Develop hybrid GA-MIP approach for medium-scale problems",
+    "Create web application for tourist itinerary planning"
+  ]
+}
