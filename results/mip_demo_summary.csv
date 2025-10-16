@@ -1,0 +1,4 @@
+Use Case,Days,POIs Available,POIs Visited,Optimal Score,Solve Time (s),Status
+Cultural Tour,2,30,4,400,4.412704944610596,Optimal
+Wildlife Safari,2,20,2,200,0.278001070022583,Optimal
+Waterfall Tour,1,15,3,240,1.5799369812011719,Optimal
